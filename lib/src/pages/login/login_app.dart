@@ -18,7 +18,7 @@ class LoginApp extends StatelessWidget {
               Text('Insira seus dados', style:
               TextStyle(color: Colors.grey.shade400, fontSize: 23, fontWeight: FontWeight.bold),),
               SizedBox(height: 40,),
-              
+
               LoginTextField(context, 'Usuário ou email', controller: _controllerLogin,),
               LoginTextField(context, 'Senha', controller: _controllerPassword, obscure: true,),
 

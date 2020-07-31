@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,12 +20,18 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
+        leading: Image.asset('assets/images/appBar/flag.png'),
         actions: <Widget>[
-
+          Image.asset('assets/images/appBar/navbar_diamont.png'),
         ],
       ),
 
       body: _body(),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
+        child: Icon(Icons.device_hub, color: Colors.blue,),
+        onPressed: (){},
+      ),
     );
   }
 }
