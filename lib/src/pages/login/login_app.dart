@@ -1,6 +1,5 @@
 import 'package:duolingo/src/pages/main_screen/home_screen.dart';
 import 'package:duolingo/src/widgets/login_text_field.dart';
-import 'package:duolingo/src/widgets/login_text_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginApp extends StatelessWidget {
@@ -9,10 +8,9 @@ class LoginApp extends StatelessWidget {
 
   _body(context){
     return Center(
-      child: Container(
+      child: SingleChildScrollView(
         padding: const EdgeInsets.only(top: 80, left: 16.0, right: 16.0, bottom: 16.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               Text('Insira seus dados', style:
               TextStyle(color: Colors.grey.shade400, fontSize: 23, fontWeight: FontWeight.bold),),
@@ -27,9 +25,14 @@ class LoginApp extends StatelessWidget {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
               }),
               SizedBox(height: 38,),
-              Text('ESQUECI A SENHA', style:
-              TextStyle(color: Colors.lightBlueAccent, fontSize: 23, fontWeight: FontWeight.bold),),
-              Flexible(child: FractionallySizedBox(heightFactor: 0.8,),),
+
+              InkWell(
+                child: Text('ESQUECI A SENHA', style:
+                TextStyle(color: Colors.lightBlueAccent, fontSize: 23,
+                fontWeight: FontWeight.bold), ),
+                onTap: (){},
+              ),
+              SizedBox(height: 120),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -52,10 +55,10 @@ class LoginApp extends StatelessWidget {
                     fontWeight: FontWeight.bold)),
                     TextSpan(text: 'Política de Privacidade',
                     style: TextStyle(color: Color(0xFFa5a5a3), fontWeight: FontWeight.bold)),
-                  ],
+                    ],
+                  ),
                 ),
-),
-              )
+              ),
             ],
         ),
       ),
