@@ -8,29 +8,52 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  _body(){
+  _body() {
     return ListView(
-      children: <Widget>[
-
-      ],
+      children: <Widget>[],
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: Image.asset('assets/images/appBar/flag.png'),
-        actions: <Widget>[
-          Image.asset('assets/images/appBar/navbar_diamont.png'),
-        ],
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(45.0),
+        child: AppBar(
+          backgroundColor: Colors.white,
+          leading: IconButton(
+            padding: EdgeInsets.only(left: 16.0),
+            icon: Image.asset('assets/images/appBar/flag.png'),
+            onPressed: () {},
+          ),
+          elevation: 5,
+          actions: <Widget>[
+            IconButton(
+              padding: EdgeInsets.only(right: 16.0),
+              icon: Image.asset('assets/images/appBar/crown_stroke.png'),
+              onPressed: () {},
+            ),
+            IconButton(
+              padding: EdgeInsets.only(left: 16.0),
+              icon: Image.asset('assets/images/appBar/navbar_fire.png'),
+              onPressed: () {},
+            ),
+            IconButton(
+              padding: EdgeInsets.only(left: 16.0),
+              icon: Image.asset('assets/images/appBar/navbar_diamont.png'),
+              onPressed: () {},
+            ),
+          ],
+        ),
       ),
-
       body: _body(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
-        child: Icon(Icons.device_hub, color: Colors.blue,),
-        onPressed: (){},
+        child: Icon(
+          Icons.device_hub,
+          color: Colors.blue,
+        ),
+        onPressed: () {},
       ),
     );
   }
