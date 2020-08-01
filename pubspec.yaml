@@ -56,6 +56,8 @@ flutter:
   - assets/images/home_screen/lesson_egg.png
   - assets/images/home_screen/lesson_airplane.png
   - assets/images/home_screen/store_item_8.png
+  - assets/images/home_screen/lesson_hamburger.png
+  - assets/images/home_screen/lesson_baby.png
   #floating_action_button
   - assets/images/floating_action_button/tab_training_selected.png
   - assets/images/floating_action_button/tab_training.png
