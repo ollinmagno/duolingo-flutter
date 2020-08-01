@@ -47,8 +47,12 @@ flutter:
   - assets/images/appBar/navbar_diamont.png
   - assets/images/appBar/navbar_fire.png
 
+  #welcome
   - assets/images/logo-with-duo.png
-
+  #social
+  - assets/images/social/facebook.png
+  - assets/images/social/google.png
+  
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
