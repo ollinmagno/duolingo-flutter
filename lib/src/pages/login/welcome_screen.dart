@@ -16,7 +16,7 @@ class WelcomeScreen extends StatelessWidget {
               child: Text('Aprenda idiomas de graça. Agora e sempre.', style:
               TextStyle(fontSize: 26, color: Colors.grey.shade400,),),
             ),
-            SizedBox(height: 145,),
+            Flexible(child: FractionallySizedBox(heightFactor: 0.75,),),
             _button('COMEÇAR AGORA', color: Colors.lightGreen, onPressed: (){}, colorText: Colors.white),
             SizedBox(height: 12,),
             _button('JÁ TENHO UMA CONTA', color: Colors.white, onPressed: (){
