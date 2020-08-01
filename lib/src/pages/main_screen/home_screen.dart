@@ -10,7 +10,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   _body() {
     return ListView(
-      children: <Widget>[],
+      children: <Widget>[
+        
+      ],
     );
   }
 
@@ -28,20 +30,39 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           elevation: 5,
           actions: <Widget>[
-            IconButton(
-              padding: EdgeInsets.only(right: 16.0),
-              icon: Image.asset('assets/images/appBar/crown_stroke.png'),
-              onPressed: () {},
-            ),
-            IconButton(
-              padding: EdgeInsets.only(left: 16.0),
-              icon: Image.asset('assets/images/appBar/navbar_fire.png'),
-              onPressed: () {},
-            ),
-            IconButton(
-              padding: EdgeInsets.only(left: 16.0),
-              icon: Image.asset('assets/images/appBar/navbar_diamont.png'),
-              onPressed: () {},
+            Row(
+              children: [
+                IconButton(
+                  icon: Image.asset(
+                    'assets/images/appBar/crown_stroke.png',
+                    height: 29,
+                  ),
+                  onPressed: () {},
+                ),
+                Text('67', style: TextStyle(
+                  fontWeight: FontWeight.bold, color: Colors.amber, fontSize: 17),),
+                SizedBox(width: 30,),
+                IconButton(
+                  icon: Image.asset(
+                    'assets/images/appBar/navbar_fire.png',
+                    height: 29,
+                  ),
+                  onPressed: () {},
+                ),
+                Text('50', style: TextStyle(
+                  fontWeight: FontWeight.bold, color: Colors.grey, fontSize: 17)),
+                SizedBox(width: 40,),
+                IconButton(
+                  padding: EdgeInsets.only(left: 16.0),
+                  icon: Image.asset('assets/images/appBar/navbar_diamont.png',
+                  height: 29,
+                  ),
+                  onPressed: () {},
+                ),
+                Text('130', style: TextStyle(
+                  fontWeight: FontWeight.bold, color: Colors.red, fontSize: 17),),
+                SizedBox(width: 20,),
+              ],
             ),
           ],
         ),
