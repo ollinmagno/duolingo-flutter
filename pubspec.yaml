@@ -52,6 +52,24 @@ flutter:
   #social
   - assets/images/social/facebook.png
   - assets/images/social/google.png
+  #home_screen
+  - assets/images/home_screen/lesson_airplane.png
+  - assets/images/home_screen/store_item_8.png
+  #floating_action_button
+  - assets/images/floating_action_button/tab_training_selected.png
+  - assets/images/floating_action_button/tab_training.png
+  #bottom_navigation_bar
+  - assets/images/bottom_navigation_bar/tab_lessons_selected.png
+  - assets/images/bottom_navigation_bar/tab_lessons.png
+  - assets/images/bottom_navigation_bar/tab_profile_selected.png
+  - assets/images/bottom_navigation_bar/tab_profile.png
+  - assets/images/bottom_navigation_bar/tab_ranking_selected.png
+  - assets/images/bottom_navigation_bar/tab_ranking.png
+  - assets/images/bottom_navigation_bar/tab_store_selected.png
+  - assets/images/bottom_navigation_bar/tab_store.png
+  - assets/images/bottom_navigation_bar/tab_stories_selected.png
+  - assets/images/bottom_navigation_bar/tab_stories.png
+  
   
   #  - images/a_dot_ham.jpeg
 
