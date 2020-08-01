@@ -53,6 +53,7 @@ flutter:
   - assets/images/social/facebook.png
   - assets/images/social/google.png
   #home_screen
+  - assets/images/home_screen/lesson_egg.png
   - assets/images/home_screen/lesson_airplane.png
   - assets/images/home_screen/store_item_8.png
   #floating_action_button
