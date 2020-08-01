@@ -13,6 +13,7 @@ class CircleAvatarIndicator extends StatelessWidget {
         SizedBox(
           height: 120.0,
           child: Stack(
+            alignment: Alignment.center,
             children: <Widget>[
               Center(
                 child: Container(
