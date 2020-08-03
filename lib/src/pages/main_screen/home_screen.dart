@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     _textCirle('Saudações'),
                   ],
                 ),
-                SizedBox(width: 20),
+                SizedBox(width: 33),
                 Column(
                   children: <Widget>[
                     CircleAvatarIndicator(Color(0xFF55acf3), 'assets/images/home_screen/lesson_airplane.png'),
@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     _textCirle('Cafeteria'),
                   ],
                 ),
-                SizedBox(width: 20),
+                SizedBox(width: 33),
                 Column(
                   children: <Widget>[
                     CircleAvatarIndicator(Color(0xFF55acf3), 'assets/images/home_screen/lesson_baby.png'),
