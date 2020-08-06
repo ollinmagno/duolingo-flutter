@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class LoginTextField extends StatelessWidget {
-  String hintText;
-  BuildContext context;
-  TextEditingController controller;
-  bool obscure;
-  FormFieldValidator<String> validator;
-  TextInputType keyboardType;
-  int maxLength;
-  TextInputAction textInputAction;
-  FocusNode focusNode;
-  FocusNode nextFocus;
+  final String hintText;
+  final BuildContext context;
+  final TextEditingController controller;
+  final bool obscure;
+  final FormFieldValidator<String> validator;
+  final TextInputType keyboardType;
+  final int maxLength;
+  final TextInputAction textInputAction;
+  final FocusNode focusNode;
+  final FocusNode nextFocus;
 
   LoginTextField(this.context, this.hintText,
       {this.controller,
@@ -26,9 +26,10 @@ class LoginTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(splashColor: Colors.transparent),
-        child: TextField(
+        child: TextFormField(
           controller: controller,
           obscureText: obscure,
+          validator: validator,
           keyboardType: keyboardType,
           maxLength: maxLength,
           style: TextStyle(fontSize: 22.0, color: Color(0xFFbdc6cf)),

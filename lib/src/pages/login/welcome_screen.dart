@@ -1,4 +1,4 @@
-import 'package:duolingo/src/pages/login/login_app.dart';
+import 'package:duolingo/src/pages/login/login_page.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -39,7 +39,7 @@ class WelcomeScreen extends StatelessWidget {
             height: constraints.maxHeight,
             width: constraints.maxWidth,
             padding: const EdgeInsets.only(
-                top: 125.0, left: 16.0, right: 16.0, bottom: 16.0),
+                top: 80.0, left: 16.0, right: 16.0, bottom: 16.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -75,7 +75,7 @@ class WelcomeScreen extends StatelessWidget {
                 _button('JÁ TENHO UMA CONTA', color: Colors.white,
                     onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoginApp()));
+                      MaterialPageRoute(builder: (context) => LoginPage()));
                 }, colorText: Colors.green),
               ],
             ),
