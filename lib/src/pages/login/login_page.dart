@@ -11,18 +11,14 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final _formKey = GlobalKey<FormState>();
+  static GlobalKey _formKey = GlobalKey<FormState>();
   final _controllerLogin = TextEditingController();
   final _controllerPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     @override
-    void dispose() {
-      _controllerLogin.dispose();
-      _controllerPassword.dispose();
-      super.dispose();
-    }
+    
 
     _onClickGoogle() async {
       final service = FirebaseService();
@@ -31,21 +27,7 @@ class _LoginPageState extends State<LoginPage> {
       if (response.ok) {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => HomeScreen()));
-      } else {
-        AlertDialog(
-          title: Text("TESTE"),
-          content: Text("TESTE"),
-          actions: <Widget>[
-            // define os botões na base do dialogo
-            new FlatButton(
-              child: Text("Fechar"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      }
+      } 
     }
 
     return Scaffold(
