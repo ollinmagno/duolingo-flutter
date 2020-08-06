@@ -11,22 +11,19 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  @override
-  Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
-    final _controllerLogin = TextEditingController();
-    final _controllerPassword = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+  final _controllerLogin = TextEditingController();
+  final _controllerPassword = TextEditingController();
 
   @override
-  initState(){
-    super.initState();
-  }
-  @override
-  void dispose() {
-    _controllerLogin.dispose();
-    _controllerPassword.dispose();
-    super.dispose();
-  }
+  Widget build(BuildContext context) {
+    @override
+    void dispose() {
+      _controllerLogin.dispose();
+      _controllerPassword.dispose();
+      super.dispose();
+    }
+
     _onClickGoogle() async {
       final service = FirebaseService();
       ApiResponse response = await service.loginGoogle();
