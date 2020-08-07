@@ -20,8 +20,8 @@ dependencies:
   flutter:
     sdk: flutter
   
-  firebase_auth: ^0.14.0+5
-  firebase_core: ^0.4.2
+  firebase_auth: ^0.16.1
+  firebase_core: ^0.4.5
   flutter_auth_buttons: ^0.9.0
   
   # The following adds the Cupertino Icons font to your application.
