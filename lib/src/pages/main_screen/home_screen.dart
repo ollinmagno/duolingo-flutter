@@ -1,5 +1,6 @@
 import 'package:duolingo/src/pages/main_screen/appbar_home_screen.dart';
 import 'package:duolingo/src/pages/main_screen/bottom_navigation.dart';
+import 'package:duolingo/src/utils/images.dart';
 import 'package:flutter/material.dart';
 import 'circle_avatar.dart';
 
@@ -98,6 +99,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    int _currentIndex = 0;
+    final double _iconSize = 41;
+    final double _iconSizeSelected = 53;
     var appBar = AppBarHomeScreen();
     
     return Scaffold(
@@ -114,7 +118,81 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         onPressed: () {},
       ),
-      bottomNavigationBar: BottomNavigation(),
+      bottomNavigationBar: BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      currentIndex: _currentIndex,
+      backgroundColor: Colors.blue,
+      iconSize: _iconSize,
+
+      onTap: (index) {
+        setState(() {
+          _currentIndex = index;
+        });
+      },
+      items: [
+        BottomNavigationBarItem(
+          icon: IconButton(
+            icon: _currentIndex == 0 ? Images.selectedLessons : Images.tabLessons,
+            onPressed: () {
+              setState(() {
+                _currentIndex = 0;
+              });
+            },
+            iconSize: _currentIndex == 0 ? _iconSizeSelected : _iconSize,
+          ),
+          title: Padding(padding: EdgeInsets.all(0)),
+        ),
+        BottomNavigationBarItem(
+          icon: IconButton(
+            icon: _currentIndex == 1 ? Images.selectedStories : Images.tabStories,
+            onPressed: () {
+              setState(() {
+                _currentIndex = 1;
+              });
+            },
+            iconSize: _currentIndex == 1 ? _iconSizeSelected : _iconSize,
+          ),
+          title: Padding(padding: EdgeInsets.all(0)),
+        ),
+        BottomNavigationBarItem(
+          icon: IconButton(
+            icon: _currentIndex == 2 ? Images.selectedProfile : Images.tabProfile,
+            onPressed: () {
+              setState(() {
+                _currentIndex = 2;
+              });
+            },
+            iconSize: _currentIndex == 2 ? _iconSizeSelected : _iconSize,
+          ),
+          title: Padding(padding: EdgeInsets.all(0)),
+        ),
+        BottomNavigationBarItem(
+          icon: IconButton(
+            icon: _currentIndex == 3 ? Images.selectedRanking : Images.tabRanking,
+            onPressed: () {
+              setState(() {
+                _currentIndex = 3;
+              });
+            },
+            iconSize: _currentIndex == 3 ? _iconSizeSelected : _iconSize,
+          ),
+          title: Padding(padding: EdgeInsets.all(0)),
+        ),
+        BottomNavigationBarItem(
+          icon: IconButton(
+            icon: _currentIndex == 4 ? Images.selectedStore : Images.tabStore,
+            onPressed: () {
+              setState(() {
+                _currentIndex = 4;
+              });
+            },
+            iconSize: _currentIndex == 4 ? _iconSizeSelected : _iconSize,
+          ),
+          title: Padding(padding: EdgeInsets.all(0)),
+        ),
+      ],
+    )
     );
   }
-}
+  }
+
