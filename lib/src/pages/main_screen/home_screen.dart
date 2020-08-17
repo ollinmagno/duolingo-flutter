@@ -1,5 +1,4 @@
 import 'package:duolingo/src/pages/main_screen/appbar_home_screen.dart';
-import 'package:duolingo/src/pages/main_screen/bottom_navigation.dart';
 import 'package:duolingo/src/utils/images.dart';
 import 'package:flutter/material.dart';
 import 'circle_avatar.dart';

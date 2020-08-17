@@ -1,4 +1,4 @@
-import 'package:duolingo/src/api_firebase/api_response.dart';
+import 'package:duolingo/src/firebase/api_response.dart';
 import 'package:duolingo/src/firebase/firebase_service.dart';
 import 'package:duolingo/src/pages/main_screen/home_screen.dart';
 import 'package:duolingo/src/widgets/button.dart';
