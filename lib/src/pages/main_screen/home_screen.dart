@@ -1,4 +1,5 @@
 import 'package:duolingo/src/pages/main_screen/appbar_home_screen.dart';
+import 'package:duolingo/src/pages/main_screen/perfil.dart';
 import 'package:duolingo/src/utils/images.dart';
 import 'package:flutter/material.dart';
 import 'circle_avatar.dart';
@@ -9,14 +10,24 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _currentIndex = 0;
+  final List<Widget> screens = [
+    HomeScreen(),
+    Perfil(),
+    HomeScreen(),
+    HomeScreen(),
+    HomeScreen(),
+  ];
+  final PageStorageBucket _bucket = PageStorageBucket();
+  Widget currentScreen = HomeScreen();
+
   _textCirle(String text) {
     return Text(
       text,
       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
     );
   }
-
-  _body() {
+  _body(){
     return ListView(
       children: <Widget>[
         SizedBox(height: 38),
@@ -95,7 +106,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
   }
-  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +118,10 @@ class _HomeScreenState extends State<HomeScreen> {
         preferredSize: Size.fromHeight(45.0),
         child: appBar,
       ),
-      body: _body(),
+        body: PageStorage(
+        child: _body(),
+        bucket: _bucket,
+      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
         child: Image.asset(
@@ -135,6 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               setState(() {
                 _currentIndex = 0;
+                currentScreen = HomeScreen();
               });
             },
             iconSize: _currentIndex == 0 ? _iconSizeSelected : _iconSize,
@@ -147,6 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               setState(() {
                 _currentIndex = 1;
+                currentScreen = HomeScreen();
               });
             },
             iconSize: _currentIndex == 1 ? _iconSizeSelected : _iconSize,
@@ -159,6 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               setState(() {
                 _currentIndex = 2;
+                currentScreen = Perfil();
               });
             },
             iconSize: _currentIndex == 2 ? _iconSizeSelected : _iconSize,
@@ -171,6 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               setState(() {
                 _currentIndex = 3;
+                currentScreen = HomeScreen();
               });
             },
             iconSize: _currentIndex == 3 ? _iconSizeSelected : _iconSize,
@@ -183,6 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               setState(() {
                 _currentIndex = 4;
+                currentScreen = HomeScreen();
               });
             },
             iconSize: _currentIndex == 4 ? _iconSizeSelected : _iconSize,

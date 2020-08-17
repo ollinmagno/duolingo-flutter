@@ -1,6 +1,5 @@
 import 'dart:convert' as convert;
-
-import 'package:duolingo/sql/prefs.dart';
+import 'package:duolingo/src/sql/prefs.dart';
 
 class User {
   String login;
