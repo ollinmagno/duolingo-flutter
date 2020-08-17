@@ -1,3 +1,4 @@
+import 'package:duolingo/src/pages/main_screen/perfil.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -48,107 +49,62 @@ class _BottomNavigationState extends State<BottomNavigation> {
       },
       items: [
         BottomNavigationBarItem(
-          icon: _currentIndex == 0 ?
-          IconButton(
-            icon: _selectedLessons,
+          icon: IconButton(
+            icon: _currentIndex == 0 ? _selectedLessons : _tabLessons,
             onPressed: () {
               setState(() {
                 _currentIndex = 0;
               });
             },
-            iconSize: _iconSizeSelected,
-          ) : IconButton(
-            icon: _tabLessons,
-            onPressed: () {
-              setState(() {
-                _currentIndex = 0;
-              });
-            },
-            iconSize: _iconSize,
+            iconSize: _currentIndex == 0 ? _iconSizeSelected : _iconSize,
           ),
           title: Padding(padding: EdgeInsets.all(0)),
         ),
         BottomNavigationBarItem(
-          icon: _currentIndex == 1 ?
-          IconButton(
-            icon: _selectedStories,
+          icon: IconButton(
+            icon: _currentIndex == 1 ? _selectedStories : _tabStories,
             onPressed: () {
               setState(() {
                 _currentIndex = 1;
               });
             },
-            iconSize: _iconSizeSelected,
-          ) : IconButton(
-            icon: _tabStories,
-            onPressed: () {
-              setState(() {
-                _currentIndex = 1;
-              });
-            },
-            iconSize: _iconSize,
+            iconSize: _currentIndex == 1 ? _iconSizeSelected : _iconSize,
           ),
           title: Padding(padding: EdgeInsets.all(0)),
         ),
         BottomNavigationBarItem(
-          icon: _currentIndex == 2 ?
-          IconButton(
-            icon: _selectedProfile,
+          icon: IconButton(
+            icon: _currentIndex == 2 ? _selectedProfile : _tabProfile,
             onPressed: () {
               setState(() {
                 _currentIndex = 2;
               });
             },
-            iconSize: _iconSizeSelected,
-          ) : IconButton(
-            icon: _tabProfile,
-            onPressed: () {
-              setState(() {
-                _currentIndex = 2;
-              });
-            },
-            iconSize: _iconSize,
+            iconSize: _currentIndex == 2 ? _iconSizeSelected : _iconSize,
           ),
           title: Padding(padding: EdgeInsets.all(0)),
         ),
         BottomNavigationBarItem(
-          icon: _currentIndex == 3 ?
-          IconButton(
-            icon: _selectedRanking,
+          icon: IconButton(
+            icon: _currentIndex == 3 ?_selectedRanking : _tabRanking,
             onPressed: () {
               setState(() {
                 _currentIndex = 3;
               });
             },
-            iconSize: _iconSizeSelected,
-          ) : IconButton(
-            icon: _tabRanking,
-            onPressed: () {
-              setState(() {
-                _currentIndex = 3;
-              });
-            },
-            iconSize: _iconSize,
+            iconSize: _currentIndex == 3 ? _iconSizeSelected : _iconSize,
           ),
           title: Padding(padding: EdgeInsets.all(0)),
         ),
         BottomNavigationBarItem(
-          icon: _currentIndex == 4 ?
-          IconButton(
-            icon: _selectedStore,
+          icon: IconButton(
+            icon: _currentIndex == 4 ? _selectedStore : _tabStore,
             onPressed: () {
               setState(() {
                 _currentIndex = 4;
               });
             },
-            iconSize: _iconSizeSelected,
-          ) : IconButton(
-            icon: _tabStore,
-            onPressed: () {
-              setState(() {
-                _currentIndex = 4;
-              });
-            },
-            iconSize: _iconSize,
+            iconSize: _currentIndex == 4 ? _iconSizeSelected : _iconSize,
           ),
           title: Padding(padding: EdgeInsets.all(0)),
         ),
