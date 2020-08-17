@@ -1,2 +1,2 @@
-# Interface do aplicativo Duolingo feita com Flutter.
+# Interface do aplicativo Duolingo com Flutter.
 
