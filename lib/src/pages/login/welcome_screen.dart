@@ -2,8 +2,9 @@ import 'package:duolingo/src/pages/login/login_page.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  _button(String text, {Color color, Color colorText, Function onPressed}) {
-    return Container(
+  Container _button(String text, {Color color, 
+  Color colorText, Function onPressed}) =>
+    Container(
       width: 350,
       height: 60,
       decoration: BoxDecoration(boxShadow: [
@@ -11,68 +12,67 @@ class WelcomeScreen extends StatelessWidget {
           color: Colors.grey.withOpacity(0.5),
           spreadRadius: 2,
           blurRadius: 12,
-          offset: Offset(0, 2),
+          offset: const Offset(0, 2),
         ),
       ]),
       child: RaisedButton(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.0),
+          borderRadius: BorderRadius.circular(16),
         ),
         color: color,
+        onPressed: onPressed,
         child: Text(
           text,
           style: TextStyle(
               color: colorText, fontSize: 23, fontWeight: FontWeight.bold),
         ),
-        onPressed: onPressed,
       ),
     );
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: LayoutBuilder(builder: (_, constraints) {
+        child: LayoutBuilder(builder: (_, BoxConstraints constraints) {
           return Container(
             color: Colors.white,
             height: constraints.maxHeight,
             width: constraints.maxWidth,
             padding: const EdgeInsets.only(
-                top: 80.0, left: 16.0, right: 16.0, bottom: 16.0),
+                top: 80, left: 16, right: 16, bottom: 16),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Image.asset(
-                  'assets/images/logo-with-duo.png',
+                  "assets/images/logo-with-duo.png",
                   width: 270,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 22,
                 ),
                 SizedBox(
                   width: 280,
                   child: Text(
-                    'Aprenda idiomas de graça. Agora e sempre.',
+                    "Aprenda idiomas de graça. Agora e sempre.",
                     style: TextStyle(
                       fontSize: 26,
                       color: Colors.grey.shade400,
                     ),
                   ),
                 ),
-                Flexible(
+                const Flexible(
                   child: FractionallySizedBox(
                     heightFactor: 0.75,
                   ),
                 ),
-                _button('COMEÇAR AGORA',
+                _button("COMEÇAR AGORA",
                     color: Colors.lightGreen,
                     onPressed: () {},
                     colorText: Colors.white),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
-                _button('JÁ TENHO UMA CONTA', color: Colors.white,
+                _button("JÁ TENHO UMA CONTA", color: Colors.white,
                     onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => LoginPage()));

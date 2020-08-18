@@ -1,6 +1,6 @@
 import 'package:duolingo/src/firebase/api_response.dart';
 import 'package:duolingo/src/firebase/firebase_service.dart';
-import 'package:duolingo/src/pages/main_screen/home_screen.dart';
+import 'package:duolingo/src/pages/main_screen/home.dart';
 import 'package:duolingo/src/widgets/button.dart';
 import 'package:duolingo/src/widgets/login_text_field.dart';
 import 'package:flutter/material.dart';
@@ -11,76 +11,74 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  static GlobalKey _formKey = GlobalKey<FormState>();
-  final _controllerLogin = TextEditingController();
-  final _controllerPassword = TextEditingController();
+  static final GlobalKey _formKey = GlobalKey<FormState>();
+  final TextEditingController _controllerLogin = TextEditingController();
+  final TextEditingController _controllerPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    @override
-    
-
-    _onClickGoogle() async {
-      final service = FirebaseService();
+    Future _onClickGoogle() async {
+      final FirebaseService service = FirebaseService();
       ApiResponse response = await service.loginGoogle();
 
       if (response.ok) {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomeScreen()));
-      } 
+        await Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Home()));
+      }
     }
 
     return Scaffold(
       body: LayoutBuilder(
-        builder: (_, constraints) {
-          return Form(
+        builder: (context, BoxConstraints constraints) =>
+           Form(
             key: _formKey,
             child: Container(
               color: Colors.white,
               height: constraints.maxHeight,
               width: constraints.maxWidth,
               padding: const EdgeInsets.only(
-                  top: 60, left: 16.0, right: 16.0, bottom: 16.0),
+                  top: 60, left: 16, right: 16, bottom: 16),
               child: SingleChildScrollView(
                 child: Column(
                   children: <Widget>[
                     Text(
-                      'Insira seus dados',
+                      "Insira seus dados",
                       style: TextStyle(
                           color: Colors.grey.shade400,
                           fontSize: 23,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
                     LoginTextField(
                       context,
-                      'Usuário ou email',
+                      "Usuário ou email",
                       controller: _controllerLogin,
                     ),
                     LoginTextField(
                       context,
-                      'Senha',
+                      "Senha",
                       controller: _controllerPassword,
                       obscure: true,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Button(
-                      'ENTRAR',
-                      color: Color(0xFF1AB1F6),
+                      "ENTRAR",
+                      color: const Color(0xFF1AB1F6),
                       colorText: Colors.white,
                       widget: 350,
                       onPressed: () {},
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     InkWell(
+                      onTap: () {},
                       child: Text(
-                        'ESQUECI A SENHA',
+                        "ESQUECI A SENHA",
                         style: TextStyle(
                           color: Colors.lightBlueAccent,
                           fontSize: 23,
@@ -88,37 +86,36 @@ class _LoginPageState extends State<LoginPage> {
                           decoration: TextDecoration.underline,
                         ),
                       ),
-                      onTap: () {},
                     ),
                     SizedBox(height: (constraints.maxHeight) / 3.5),
                     Container(
-                        margin: const EdgeInsets.all(16.0),
+                        margin: const EdgeInsets.all(16),
                         height: 60,
                         width: constraints.maxWidth,
                         child: RaisedButton(
                           color: Colors.grey.shade100,
-                          child: Text('Sign in with Google'),
                           onPressed: _onClickGoogle,
+                          child: const Text("Sign in with Google"),
                         )),
-                    SizedBox(height: 12),
+                    const SizedBox(height: 12),
                     Container(
                       margin: const EdgeInsets.all(8),
                       child: const Text.rich(
                         TextSpan(
                           text:
-                              'Ao entrar no Duolingo, você concorda com os nossos',
+                          "Ao entrar no Duolingo, você concorda com os nossos",
                           style: TextStyle(
                             fontSize: 18,
                             color: Color(0xFFb2b2b0),
                           ),
                           children: <TextSpan>[
                             TextSpan(
-                                text: ' Termos e ',
+                                text: " Termos e ",
                                 style: TextStyle(
                                     color: Color(0xFFa5a5a3),
                                     fontWeight: FontWeight.bold)),
                             TextSpan(
-                                text: 'Política de Privacidade',
+                                text: "Política de Privacidade",
                                 style: TextStyle(
                                     color: Color(0xFFa5a5a3),
                                     fontWeight: FontWeight.bold)),
@@ -130,8 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
-          );
-        },
+          ),
       ),
     );
   }

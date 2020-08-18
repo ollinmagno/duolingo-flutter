@@ -10,10 +10,10 @@ class MyApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
-    ]);
+    ]); 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Duolingo',
+      title: "Duolingo",
       theme: ThemeData(primaryColor: Colors.white),
       home: WelcomeScreen(),
     );

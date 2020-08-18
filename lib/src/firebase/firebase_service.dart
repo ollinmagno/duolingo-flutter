@@ -6,7 +6,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 class FirebaseService {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
-
+  
   Future<ApiResponse> loginGoogle() async {
     try {
       final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
@@ -20,11 +20,11 @@ class FirebaseService {
         idToken: googleAuth.idToken,
       );
 
-      AuthResult result = await _auth.signInWithCredential(credential);
+      final AuthResult result = await _auth.signInWithCredential(credential);
       final FirebaseUser fuser = result.user;
-      print("Firebase Nome: " + fuser.displayName);
-      print("Firebase Email: " + fuser.email);
-      print("Firebase Foto: " + fuser.photoUrl);
+      print("Firebase Nome: ${fuser.displayName}");
+      print("Firebase Email: ${fuser.email}");
+      print("Firebase Foto: ${fuser.photoUrl}");
 
       final user = User(
         name: fuser.displayName,

@@ -1,8 +1,5 @@
-import 'package:duolingo/src/pages/main_screen/appbar_home_screen.dart';
-import 'package:duolingo/src/pages/main_screen/perfil.dart';
-import 'package:duolingo/src/utils/images.dart';
+import 'package:duolingo/src/pages/main_screen/circle_avatar.dart';
 import 'package:flutter/material.dart';
-import 'circle_avatar.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -10,206 +7,99 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 0;
-  final List<Widget> screens = [
-    HomeScreen(),
-    Perfil(),
-    HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
-  ];
-  final PageStorageBucket _bucket = PageStorageBucket();
-  Widget currentScreen = HomeScreen();
-
-  _textCirle(String text) {
-    return Text(
+  Text _textCirle(String text) =>
+      Text(
       text,
       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
     );
-  }
-  _body(){
-    return ListView(
-      children: <Widget>[
-        SizedBox(height: 38),
-        Column(
-          children: <Widget>[
-            CircleAvatarIndicator(Color(0xFF55acf3), 'assets/images/home_screen/lesson_egg.png'),
-            SizedBox(height: 10),
-            _textCirle('Introdução'),
-            SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    CircleAvatarIndicator(Color(0xFF55acf3), 'assets/images/home_screen/lesson_dialog.png'),
-                    SizedBox(height: 10),
-                    _textCirle('Saudações'),
-                  ],
-                ),
-                SizedBox(width: 33),
-                Column(
-                  children: <Widget>[
-                    CircleAvatarIndicator(Color(0xFF55acf3), 'assets/images/home_screen/lesson_airplane.png'),
-                    SizedBox(height: 10),
-                    _textCirle('Viagem'),
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    CircleAvatarIndicator(Color(0xFF55acf3), 'assets/images/home_screen/lesson_hamburger.png'),
-                    SizedBox(height: 10),
-                    _textCirle('Cafeteria'),
-                  ],
-                ),
-                SizedBox(width: 33),
-                Column(
-                  children: <Widget>[
-                    CircleAvatarIndicator(Color(0xFF55acf3), 'assets/images/home_screen/lesson_baby.png'),
-                    SizedBox(height: 10),
-                    _textCirle('Famílias'),
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(height: 40),
-            Row(crossAxisAlignment: CrossAxisAlignment.end, children: <Widget>[
-              Expanded(
-                child: Container(
-                    margin: const EdgeInsets.only(left: 10.0, right: 15.0),
-                    child: Divider(
-                      color: Colors.black,
-                      height: 50,
-                    )),
-              ),
-              Image.asset(
-                'assets/images/home_screen/lesson_divisor_castle.png',
-                height: 85,
-              ),
-              Expanded(
-                child: Container(
-                    margin: const EdgeInsets.only(left: 15.0, right: 10.0),
-                    child: Divider(
-                      color: Colors.black,
-                      height: 50,
-                    )),
-              ),
-            ]),
-          ],
-        ),
-      ],
-    );
-  }
+
 
   @override
   Widget build(BuildContext context) {
-    final double _iconSize = 41;
-    final double _iconSizeSelected = 53;
-    var appBar = AppBarHomeScreen();
-    
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(45.0),
-        child: appBar,
+      body: ListView(
+        children: <Widget>[
+          const SizedBox(height: 38),
+          Column(
+            children: <Widget>[
+              const CircleAvatarIndicator(Color(0xFF55acf3),
+                  "assets/images/home_screen/lesson_egg.png"),
+              const SizedBox(height: 10),
+              _textCirle("Introdução"),
+              const SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      const CircleAvatarIndicator(Color(0xFF55acf3),
+                          "assets/images/home_screen/lesson_dialog.png"),
+                      const SizedBox(height: 10),
+                      _textCirle("Saudações"),
+                    ],
+                  ),
+                  const SizedBox(width: 33),
+                  Column(
+                    children: <Widget>[
+                      const CircleAvatarIndicator(Color(0xFF55acf3),
+                          "assets/images/home_screen/lesson_airplane.png"),
+                      const SizedBox(height: 10),
+                      _textCirle("Viagem"),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      const CircleAvatarIndicator(Color(0xFF55acf3),
+                          "assets/images/home_screen/lesson_hamburger.png"),
+                      const SizedBox(height: 10),
+                      _textCirle("Cafeteria"),
+                    ],
+                  ),
+                  const SizedBox(width: 33),
+                  Column(
+                    children: <Widget>[
+                      const CircleAvatarIndicator(Color(0xFF55acf3),
+                          "assets/images/home_screen/lesson_baby.png"),
+                      const SizedBox(height: 10),
+                      _textCirle("Famílias"),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 40),
+              Row(crossAxisAlignment: CrossAxisAlignment.end, children: <
+                  Widget>[
+                Expanded(
+                  child: Container(
+                      margin: const EdgeInsets.only(left: 10, right: 15),
+                      child: Divider(
+                        color: Colors.black,
+                        height: 50,
+                      )),
+                ),
+                Image.asset(
+                  "assets/images/home_screen/lesson_divisor_castle.png",
+                  height: 85,
+                ),
+                Expanded(
+                  child: Container(
+                      margin: const EdgeInsets.only(left: 15, right: 10),
+                      child: Divider(
+                        color: Colors.black,
+                        height: 50,
+                      )),
+                ),
+              ]),
+            ],
+          ),
+        ],
       ),
-        body: PageStorage(
-        child: _body(),
-        bucket: _bucket,
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.white,
-        child: Image.asset(
-          'assets/images/floating_action_button/tab_training_selected.png',
-          height: 33,
-        ),
-        onPressed: () {},
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
-      currentIndex: _currentIndex,
-      backgroundColor: Colors.blue,
-      iconSize: _iconSize,
-
-      onTap: (index) {
-        setState(() {
-          _currentIndex = index;
-        });
-      },
-      items: [
-        BottomNavigationBarItem(
-          icon: IconButton(
-            icon: _currentIndex == 0 ? Images.selectedLessons : Images.tabLessons,
-            onPressed: () {
-              setState(() {
-                _currentIndex = 0;
-                currentScreen = HomeScreen();
-              });
-            },
-            iconSize: _currentIndex == 0 ? _iconSizeSelected : _iconSize,
-          ),
-          title: Padding(padding: EdgeInsets.all(0)),
-        ),
-        BottomNavigationBarItem(
-          icon: IconButton(
-            icon: _currentIndex == 1 ? Images.selectedStories : Images.tabStories,
-            onPressed: () {
-              setState(() {
-                _currentIndex = 1;
-                currentScreen = HomeScreen();
-              });
-            },
-            iconSize: _currentIndex == 1 ? _iconSizeSelected : _iconSize,
-          ),
-          title: Padding(padding: EdgeInsets.all(0)),
-        ),
-        BottomNavigationBarItem(
-          icon: IconButton(
-            icon: _currentIndex == 2 ? Images.selectedProfile : Images.tabProfile,
-            onPressed: () {
-              setState(() {
-                _currentIndex = 2;
-                currentScreen = Perfil();
-              });
-            },
-            iconSize: _currentIndex == 2 ? _iconSizeSelected : _iconSize,
-          ),
-          title: Padding(padding: EdgeInsets.all(0)),
-        ),
-        BottomNavigationBarItem(
-          icon: IconButton(
-            icon: _currentIndex == 3 ? Images.selectedRanking : Images.tabRanking,
-            onPressed: () {
-              setState(() {
-                _currentIndex = 3;
-                currentScreen = HomeScreen();
-              });
-            },
-            iconSize: _currentIndex == 3 ? _iconSizeSelected : _iconSize,
-          ),
-          title: Padding(padding: EdgeInsets.all(0)),
-        ),
-        BottomNavigationBarItem(
-          icon: IconButton(
-            icon: _currentIndex == 4 ? Images.selectedStore : Images.tabStore,
-            onPressed: () {
-              setState(() {
-                _currentIndex = 4;
-                currentScreen = HomeScreen();
-              });
-            },
-            iconSize: _currentIndex == 4 ? _iconSizeSelected : _iconSize,
-          ),
-          title: Padding(padding: EdgeInsets.all(0)),
-        ),
-      ],
-    )
     );
   }
-  }
-
+}

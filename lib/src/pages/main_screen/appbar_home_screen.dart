@@ -6,62 +6,62 @@ class AppBarHomeScreen extends StatelessWidget {
     return AppBar(
       backgroundColor: Colors.white,
           leading: IconButton(
-            padding: EdgeInsets.only(left: 16.0),
-            icon: Image.asset('assets/images/appBar/flag.png'),
+            padding: const EdgeInsets.only(left: 16),
+            icon: Image.asset("assets/images/appBar/flag.png"),
             onPressed: () {},
           ),
           elevation: 5,
           actions: <Widget>[
             Row(
-              children: [
+              children: <Widget> [
                 IconButton(
                   icon: Image.asset(
-                    'assets/images/appBar/crown_stroke.png',
+                    "assets/images/appBar/crown_stroke.png",
                     height: 29,
                   ),
                   onPressed: () {},
                 ),
                 Text(
-                  '67',
+                  "67",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.amber,
                       fontSize: 17),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
                 IconButton(
                   icon: Image.asset(
-                    'assets/images/appBar/navbar_fire.png',
+                    "assets/images/appBar/navbar_fire.png",
                     height: 29,
                   ),
                   onPressed: () {},
                 ),
-                Text('50',
+                Text("50",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.grey,
                         fontSize: 17)),
-                SizedBox(
+                const SizedBox(
                   width: 40,
                 ),
                 IconButton(
-                  padding: EdgeInsets.only(left: 16.0),
+                  padding: const EdgeInsets.only(left: 16),
                   icon: Image.asset(
-                    'assets/images/appBar/navbar_diamont.png',
+                    "assets/images/appBar/navbar_diamont.png",
                     height: 29,
                   ),
                   onPressed: () {},
                 ),
                 Text(
-                  '130',
+                  "130",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.red,
                       fontSize: 17),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 20,
                 ),
               ],

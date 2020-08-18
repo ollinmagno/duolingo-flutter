@@ -16,11 +16,12 @@ class Button extends StatelessWidget {
       this.showProgress = false});
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
+  Widget build(BuildContext context) =>
+    Container(
       height: 46,
       child: RaisedButton(
         color: Colors.blue,
+        onPressed: onPressed,
         child: showProgress
             ? Center(
                 child: CircularProgressIndicator(
@@ -34,8 +35,6 @@ class Button extends StatelessWidget {
                   fontSize: 22,
                 ),
               ),
-        onPressed: onPressed,
       ),
     );
-  }
 }

@@ -4,14 +4,14 @@ class CircleAvatarIndicator extends StatelessWidget {
   final Color _backgroundColor;
   final String _img;
 
-  CircleAvatarIndicator(this._backgroundColor, this._img);
+  const CircleAvatarIndicator(this._backgroundColor, this._img);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         SizedBox(
-          height: 120.0,
+          height: 120,
           child: Stack(
             alignment: Alignment.center,
             children: <Widget>[
@@ -19,9 +19,9 @@ class CircleAvatarIndicator extends StatelessWidget {
                 child: Container(
                   width: 115,
                   height: 115,
-                  child: CircularProgressIndicator(
+                  child: const CircularProgressIndicator(
                     strokeWidth: 13,
-                    value: 1.0,
+                    value: 1,
                   ),
                 ),
               ),
@@ -30,11 +30,11 @@ class CircleAvatarIndicator extends StatelessWidget {
                   width: 85,
                   child: CircleAvatar(
                     backgroundColor: _backgroundColor,
+                    radius: 56,
                     child: Image.asset(
-                      this._img,
+                      _img,
                       height: 58,
                     ),
-                    radius: 56.0,
                   ),
                 ),
               ),

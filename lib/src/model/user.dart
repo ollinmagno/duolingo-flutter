@@ -36,12 +36,12 @@ class User {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['login'] = this.login;
-    data['name'] = this.name;
-    data['email'] = this.email;
-    data['urlPhoto'] = this.urlPhoto;
-    data['token'] = this.token;
-    data['roles'] = this.roles;
+    data['login'] = login;
+    data['name'] = name;
+    data['email'] = email;
+    data['urlPhoto'] = urlPhoto;
+    data['token'] = token;
+    data['roles'] = roles;
     return data;
   }
 
@@ -50,25 +50,25 @@ class User {
   }
 
   void save() {
-    Map map = toJson();
+    final Map map = toJson();
 
-    String json = convert.json.encode(map);
+    final String json = convert.json.encode(map);
 
     Prefs.setString("user.prefs", json);
   }
 
   static Future<User> get() async {
-    String json = await Prefs.getString("user.prefs");
+    final String json = await Prefs.getString("user.prefs");
     if (json.isEmpty) {
       return null;
     }
     Map map = convert.json.decode(json);
-    User user = User.fromJson(map);
+    final User user = User.fromJson(map);
     return user;
   }
 
   @override
-  String toString() {
-    return 'User{login: $login, name: $name}';
-  }
+  String toString() =>
+    "User{login: $login, name: $name}";
+  
 }
