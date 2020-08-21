@@ -1,4 +1,4 @@
-import 'package:duolingo/src/pages/main_screen/appbar_home_screen.dart';
+import 'package:duolingo/src/widgets/appbar_home_screen.dart';
 import 'package:duolingo/src/pages/main_screen/home_screen.dart';
 import 'package:duolingo/src/pages/main_screen/profile.dart';
 import 'package:duolingo/src/pages/main_screen/ranking.dart';
