@@ -1,8 +1,7 @@
-import 'package:duolingo/src/pages/login/welcome_screen.dart';
-import 'package:duolingo/src/pages/main_screen/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
+import 'src/home/login/welcome_screen.dart';
+
 
 void main() => runApp(MyApp());
 

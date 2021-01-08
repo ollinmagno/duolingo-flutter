@@ -1,9 +1,9 @@
-import 'package:duolingo/src/widgets/appbar_home_screen.dart';
-import 'package:duolingo/src/pages/main_screen/home_screen.dart';
-import 'package:duolingo/src/pages/main_screen/profile.dart';
-import 'package:duolingo/src/pages/main_screen/ranking.dart';
-import 'package:duolingo/src/pages/main_screen/store.dart';
-import 'package:duolingo/src/pages/main_screen/stories.dart';
+import 'package:duolingo/src/home/appbar_home_screen.dart';
+import 'package:duolingo/src/home/main_screen/home_screen.dart';
+import 'package:duolingo/src/home/main_screen/profile.dart';
+import 'package:duolingo/src/home/main_screen/ranking.dart';
+import 'package:duolingo/src/home/main_screen/store.dart';
+import 'package:duolingo/src/home/main_screen/stories.dart';
 import 'package:duolingo/src/utils/images.dart';
 import 'package:flutter/material.dart';
 

@@ -1,4 +1,4 @@
-import 'package:duolingo/src/widgets/circle_avatar.dart';
+import 'package:duolingo/src/components/circle_avatar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

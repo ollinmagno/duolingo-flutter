@@ -1,8 +1,8 @@
+import 'package:duolingo/src/components/button.dart';
+import 'package:duolingo/src/components/login_text_field.dart';
 import 'package:duolingo/src/firebase/api_response.dart';
 import 'package:duolingo/src/firebase/firebase_service.dart';
-import 'package:duolingo/src/pages/main_screen/home.dart';
-import 'package:duolingo/src/widgets/button.dart';
-import 'package:duolingo/src/widgets/login_text_field.dart';
+import 'package:duolingo/src/home/main_screen/home.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
