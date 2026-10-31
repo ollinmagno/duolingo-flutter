@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "agent-skills": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@tech-leads-club/agent-skills-mcp"],
+      "env": {}
+    }
+  }
+}

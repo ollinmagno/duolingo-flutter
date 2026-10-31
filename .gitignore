@@ -5,9 +5,12 @@
 *.swp
 .DS_Store
 .atom/
+.build/
 .buildlog/
 .history
 .svn/
+.swiftpm/
+migrate_working_dir/
 
 # IntelliJ related
 *.iml
@@ -22,15 +25,31 @@
 
 # Flutter/Dart/Pub related
 **/doc/api/
+**/ios/Flutter/.last_build_id
 .dart_tool/
 .flutter-plugins
+.flutter-plugins-dependencies
 .packages
 .pub-cache/
 .pub/
 /build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Secrets and local env
+.env
+.env.*
 
 # Android
 google-services.json
+*.jks
+*.keystore
+key.properties
 
 # Android related
 **/android/**/gradle-wrapper.jar
@@ -40,6 +59,9 @@ google-services.json
 **/android/gradlew.bat
 **/android/local.properties
 **/android/**/GeneratedPluginRegistrant.java
+/android/app/debug
+/android/app/profile
+/android/app/release
 
 # iOS/XCode related
 **/ios/**/*.mode1v3
@@ -67,6 +89,7 @@ google-services.json
 **/ios/Flutter/flutter_export_environment.sh
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
+GoogleService-Info.plist
 
 # Exceptions to above rules.
 !**/ios/**/default.mode1v3
